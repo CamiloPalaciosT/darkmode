@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modo Oscuro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navegacion"> 
+            <img id="menu-btn" src="img/menu.png" alt="menu dispositivos moviles">
+            <img id="logo" src="img/logo.png" alt="Logo Restaurante">              
+            <div class="navegacionIzq">
+                <div class="cuadroDos">
+                    <button class="botonNav"> Inicio
+                    </button>
+                </div>
+                <div class="cuadroDos">
+                    <button class="botonNav"> Productos
+                    </button>
+                </div>
+                <div class="cuadroDos">
+                    <button class="botonNav"> Contactenos
+                    </button>
+                </div>
+            </div>
+            <div class="cuadroSwitch" >
+                <label class="switch">
+                    <input type="checkbox" class="input__check" id="switche">
+                    <span class="slider"></span>
+                  </label>
+            </div>
+        </div>
+            
+    </nav>
+    <header class="cabecera"> 
+        <div class="cuadro" >
+            <h2 class="tituloProducto">Postre de helado con Fresas</h2>
+            <img id="postreFresa" src="img/Postre.png" alt="Postre de fresas">
+            <h3 class="textoProducto"> Nuestro postre combina la cremosidad del helado con el sabor dulce y jugoso de las fresas recién cortadas. Cada bocado es una explosión de sabor que te transportará a un paraíso de sabores.</h3>
+            <button>
+                <span class="text"> $12.000</span>
+              </button>
+        </div>
+        <div class="cuadro" >
+            <h2 class="tituloProducto">Postre de Helado de chocolate</h2>
+            <img id="postrePareja" src="img/pareja.png" alt="Postre de fresas">
+            <h3 class="textoProducto">Nuestro postre es la opción perfecta para aquellos amantes del chocolate que buscan algo especial y diferente. Además, lo puedes combinar con tus toppings favoritos, como fresas frescas, nueces y mucho más.</h3>
+            <button>
+                <span class="text"> $20.000</span>
+              </button>
+        </div>
+        <div class="cuadro" >
+            <h2 class="tituloProducto">Postre Bolas de Helado</h2>
+            <img id="postreBolas" src="img/Bolas.png" alt="Postre Bolas de Helado">
+            <h3 class="textoProducto">Nuestro postre es la opción perfecta para aquellos amantes del chocolate que buscan algo especial y diferente. Además, lo puedes combinar con tus toppings favoritos, como fresas frescas, nueces y mucho más.</h3>
+            <button>
+                <span class="text"> $10.000</span>
+              </button>
+        </div>
+
+    </header>
+    <footer class="piePagina">
+            <h3 class="textoFooter">Diseñado por:</h3>
+            <br>
+            <h3 class="textoFooter">Camilo Palacios T</h3>
+        <div class="centradoLinks">
+            <a href="https://github.com/CamiloPalaciosT">GitHub</a>
+        </div>
+        <div class="centradoLinksDos">
+            <a href="https://www.linkedin.com/in/camilo-alberto-palacios/">linkedin</a>
+        </div>
+        <script> 
+            const switchElem = document.getElementById('switche');
+            const cuadrosElem = document.querySelectorAll('.cuadro');
+            const navegacionElem = document.querySelectorAll('.navegacion');
+            const piePaginaElem = document.querySelectorAll('.piePagina');
+        
+            switchElem.addEventListener('change', () => {
+                if (switchElem.checked) {
+                    cuadrosElem.forEach((cuadro) => {
+                        cuadro.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                        cuadro.style.color = 'white';
+                    });
+                    navegacionElem.forEach((navegacion) => {
+                        navegacion.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                        navegacion.style.color = 'white';
+                    });
+                    piePaginaElem.forEach((piePagina) => {
+                        piePagina.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                        piePagina.style.color = 'white';
+                    });
+                } else {
+                    cuadrosElem.forEach((cuadro) => {
+                        cuadro.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                        cuadro.style.color = 'black';
+                    });
+                    navegacionElem.forEach((navegacion) => {
+                        navegacion.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                        navegacion.style.color = 'black';
+                    });
+                    piePaginaElem.forEach((piePagina) => {
+                        piePagina.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+                        piePagina.style.color = 'black';
+                    });
+                }
+            });  
+        </script>
+    </footer>
+</body>
+</html>
