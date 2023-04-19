@@ -1,5 +1,5 @@
 body{
-    background-image: url(img/bg.jpg);
+    background-image: url(img/bg.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     height: auto;
@@ -11,6 +11,14 @@ body{
     width: 100%;
     height: 8em;
     display: flex;
+}
+.bar{
+  width: auto;
+  height: auto;
+  padding-top: 4%;
+  padding-left: 3%;
+  font-size: 4em;
+  display: none;
 }
 .navegacionIzq{
     display: flex;
@@ -61,7 +69,8 @@ body{
    }
    
    .botonNav:hover::before {
-    width: 9em;
+    width: 100%;
+    height: 100%;
    }
 #logo{
     margin-top: 1%;
@@ -83,6 +92,38 @@ body{
     text-align: center;
     font-size: 2em;
     display: flexbox;
+}
+.menuOculto {
+  background: rgba(255, 255, 255, 1);
+  height: 115%;
+  width: 20%;
+  position: absolute;
+  top: 0;
+  left: -20%;
+  padding-top: 3%;
+  transition: left 0.5s ease-out;
+}
+#checke{
+  display: none;
+}
+.menuOculto label {
+  padding-left: 25%;
+}
+input[type=checkbox]#checke:checked ~ .menuOculto {
+  left: 20%;
+}
+.menuOculto li{
+  margin-top: 10%;
+  padding: 5px;
+  width: 90%;
+  text-align: center;
+  padding-top: 15%;
+}
+.listaOculta{
+  color: black; 
+  text-decoration: none;
+  font-size: 2em;
+
 }
 .switch {
     margin-top: 10%;
@@ -108,11 +149,11 @@ body{
     border-radius: 50px;
     background-color: #d8ff99;
     background-image: radial-gradient(at 21% 46%, hsla(183,65%,60%,1) 0px, transparent 50%),
-  radial-gradient(at 23% 25%, hsla(359,74%,70%,1) 0px, transparent 50%),
-  radial-gradient(at 20% 1%, hsla(267,83%,75%,1) 0px, transparent 50%),
-  radial-gradient(at 86% 87%, hsla(204,69%,68%,1) 0px, transparent 50%),
-  radial-gradient(at 99% 41%, hsla(171,72%,77%,1) 0px, transparent 50%),
-  radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
+    radial-gradient(at 23% 25%, hsla(359,74%,70%,1) 0px, transparent 50%),
+    radial-gradient(at 20% 1%, hsla(267,83%,75%,1) 0px, transparent 50%),
+    radial-gradient(at 86% 87%, hsla(204,69%,68%,1) 0px, transparent 50%),
+    radial-gradient(at 99% 41%, hsla(171,72%,77%,1) 0px, transparent 50%),
+    radial-gradient(at 55% 24%, hsla(138,60%,62%,1) 0px, transparent 50%);
   }
   .switch input {
     opacity: 0;
@@ -257,32 +298,43 @@ button {
     height: auto;
 }
 #postreBolas{
-    width: 33.5%;
+  margin-top: 10%;
+  margin-bottom: 3%;
+    width: 60%;
     height: auto;   
 }
 .piePagina{
     background-color: rgba(255, 255, 255, 0.7);
     width: 100%;
-    height: 8em;
+    height: auto;
 }
 .textoFooter{
-    font-size: 1em;
+    font-size: 2em;
     text-align: center;
 }
 .centradoLinks{
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 1em;
+    gap: 10px;
 }
-.centradoLinksDos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#github{
+  margin-left: 43%;
+  width: 7%;
+  height: auto;
+}
+#linkedin{
+  width: 7%;
+  height: auto;  
 }
 @media screen and (max-width: 800px) {
   .navegacionIzq{
-    margin-left: 30%;
+    display: none;
+  }
+  .bar{
+    padding: auto;
+    font-size: auto;
+    display: inline;
   }
   .cuadro{
     display: flexbox;
@@ -301,19 +353,22 @@ button {
   #logo{
     position:absolute;
     top: 0%;
-    left: 0%;
-    width: 26%;
+    left: 35%;
+    width: 20%;
     height: auto;
+}.menuOculto {
+  width: 35%;
+  left: -35%;
 }
 }
 @media screen and (max-width: 481px) {
   .navegacionIzq{
     display: none;
   }
-  #menu-btn{
+  .bar{
+    padding-top: 8%;
+    font-size: 4em;
     display: inline;
-    width: 20%;
-    height: auto;
   }
   .cuadro{
     display: flexbox;
@@ -337,6 +392,16 @@ button {
     width: 40%;
     height: auto;
 }
+.menuOculto {
+  height: 175%;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: -50%;
+  padding-top: 3%;
+  transition: left 0.5s ease-out;
+}
+
 }
 @media screen and (min-width: 768px) {
   #menu-btn{

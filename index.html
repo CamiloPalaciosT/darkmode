@@ -10,12 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <nav>
         <div class="navegacion"> 
-            <img id="menu-btn" src="img/menu.png" alt="menu dispositivos moviles">
-            <img id="logo" src="img/logo.png" alt="Logo Restaurante">              
+            <input type="checkbox" id="checke">
+            <label for="checke" class="bar" >
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <img id="logo" src="img/logo.webp" alt="Logo Restaurante">              
             <div class="navegacionIzq">
                 <div class="cuadroDos">
                     <button class="botonNav"> Inicio
@@ -30,11 +34,23 @@
                     </button>
                 </div>
             </div>
-            <div class="cuadroSwitch" >
+            <div class="cuadroSwitch">
                 <label class="switch">
                     <input type="checkbox" class="input__check" id="switche">
                     <span class="slider"></span>
                   </label>
+            </div>
+            </div>
+            <div class="menuOculto">
+                <input type="checkbox" id="checke">
+                <label for="checke" class="bar" >
+                <i class="fa-solid fa-bars"></i>
+                </label>
+                <ul>
+                  <li class="botonNav"><a class="listaOculta" href="#">Inicio</a></li>
+                  <li class="botonNav"><a class="listaOculta" href="#">Productos</a></li>
+                  <li class="botonNav"><a class="listaOculta" href="#">Contactenos</a></li>
+                </ul>
             </div>
         </div>
             
@@ -42,15 +58,17 @@
     <header class="cabecera"> 
         <div class="cuadro" >
             <h2 class="tituloProducto">Postre de helado con Fresas</h2>
-            <img id="postreFresa" src="img/Postre.png" alt="Postre de fresas">
-            <h3 class="textoProducto"> Nuestro postre combina la cremosidad del helado con el sabor dulce y jugoso de las fresas recién cortadas. Cada bocado es una explosión de sabor que te transportará a un paraíso de sabores.</h3>
+            <img id="postreFresa" src="img/postre.webp" alt="Postre de fresas">
+            <h3 class="textoProducto"> Nuestro postre combina la cremosidad del helado con el sabor dulce y jug
+                
+                oso de las fresas recién cortadas. Cada bocado es una explosión de sabor que te transportará a un paraíso de sabores.</h3>
             <button>
                 <span class="text"> $12.000</span>
               </button>
         </div>
         <div class="cuadro" >
             <h2 class="tituloProducto">Postre de Helado de chocolate</h2>
-            <img id="postrePareja" src="img/pareja.png" alt="Postre de fresas">
+            <img id="postrePareja" src="img/pareja.webp" alt="Postre de fresas">
             <h3 class="textoProducto">Nuestro postre es la opción perfecta para aquellos amantes del chocolate que buscan algo especial y diferente. Además, lo puedes combinar con tus toppings favoritos, como fresas frescas, nueces y mucho más.</h3>
             <button>
                 <span class="text"> $20.000</span>
@@ -58,7 +76,7 @@
         </div>
         <div class="cuadro" >
             <h2 class="tituloProducto">Postre Bolas de Helado</h2>
-            <img id="postreBolas" src="img/Bolas.png" alt="Postre Bolas de Helado">
+            <img id="postreBolas" src="img/bolas.webp" alt="Postre Bolas de Helado">
             <h3 class="textoProducto">Nuestro postre es la opción perfecta para aquellos amantes del chocolate que buscan algo especial y diferente. Además, lo puedes combinar con tus toppings favoritos, como fresas frescas, nueces y mucho más.</h3>
             <button>
                 <span class="text"> $10.000</span>
@@ -71,16 +89,17 @@
             <br>
             <h3 class="textoFooter">Camilo Palacios T</h3>
         <div class="centradoLinks">
-            <a href="https://github.com/CamiloPalaciosT">GitHub</a>
-        </div>
-        <div class="centradoLinksDos">
-            <a href="https://www.linkedin.com/in/camilo-alberto-palacios/">linkedin</a>
+            <a href="https://github.com/CamiloPalaciosT"><img id="github" src="img/github.webp" alt="sitio web de git hub"></a>
+            <a href="https://www.linkedin.com/in/camilo-alberto-palacios/"><img id="linkedin" src="img/linkedin.webp" alt="sitio web de linkedin"></a>
         </div>
         <script> 
             const switchElem = document.getElementById('switche');
             const cuadrosElem = document.querySelectorAll('.cuadro');
             const navegacionElem = document.querySelectorAll('.navegacion');
             const piePaginaElem = document.querySelectorAll('.piePagina');
+            const menuOcultoElem = document.querySelectorAll('.menuOculto');
+            const listaOcultaElem = document.querySelectorAll('.listaOculta');
+            
         
             switchElem.addEventListener('change', () => {
                 if (switchElem.checked) {
@@ -96,6 +115,15 @@
                         piePagina.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
                         piePagina.style.color = 'white';
                     });
+                    menuOcultoElem.forEach((menuOculto) => {
+                        menuOculto.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+                        menuOculto.style.color = 'white';
+                    });
+                    listaOcultaElem.forEach((listaOculta) => {
+                        listaOculta.style.color = 'white';
+                    });
+                    
+
                 } else {
                     cuadrosElem.forEach((cuadro) => {
                         cuadro.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
@@ -109,8 +137,27 @@
                         piePagina.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
                         piePagina.style.color = 'black';
                     });
+                    menuOcultoElem.forEach((menuOculto) => {
+                        menuOculto.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+                        menuOculto.style.color = 'black';
+                    });
+                    listaOcultaElem.forEach((listaOculta) => {
+                        listaOculta.style.color = 'black';
+                    });
                 }
             });  
+            const checkbox = document.getElementById('checke');
+            const menu = document.querySelector('.menuOculto');
+
+            checkbox.addEventListener('click', function() {
+            if (checkbox.checked) {
+                menu.style.left = '0%';
+                menuVisible = true;
+            } else {
+                menu.style.left = '-50%';
+                menuVisible = false
+            }
+});
         </script>
     </footer>
 </body>
